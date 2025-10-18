@@ -3590,10 +3590,12 @@ class NomadnetFileDownloader(NomadnetDownloader):
 
 def main():
 
+    port = int(os.getenv("PORT", 8000))
+
     # parse command line args
     parser = argparse.ArgumentParser(description="ReticulumMeshChat")
     parser.add_argument("--host", nargs='?', default="127.0.0.1", type=str, help="The address the web server should listen on.")
-    parser.add_argument("--port", nargs='?', default="8000", type=int, help="The port the web server should listen on.")
+    parser.add_argument("--port", nargs='?', default=port, type=int, help="The port the web server should listen on.")
     parser.add_argument("--headless", action='store_true', help="Web browser will not automatically launch when this flag is passed.")
     parser.add_argument("--identity-file", type=str, help="Path to a Reticulum Identity file to use as your LXMF address.")
     parser.add_argument("--identity-base64", type=str, help="A base64 encoded Reticulum Identity to use as your LXMF address.")

@@ -18,7 +18,7 @@ FROM python:3.11-bookworm
 WORKDIR /app
 
 # Install Python deps
-COPY ./requirements.txt .
+COPY ./requirements.txt ./
 RUN pip install -r requirements.txt
 
 # Copy prebuilt frontend
